@@ -1,0 +1,42 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>دليل Saudi Legal AI</title><style>body{font-family:Tahoma,Arial;line-height:1.9;max-width:900px;margin:36px auto;padding:0 22px;color:#172033;background:#f5f7fa}main{background:white;padding:30px;border-radius:16px;white-space:pre-wrap}h1{color:#14243a}</style><main><h1>دليل برنامج Saudi Legal AI المستقل</h1>دليل الوصول إلى برنامج Saudi Legal AI المستقل
+الإصدار 1.1 — Windows 10 وWindows 11
+
+النتيجة المقصودة
+بعد بناء ملف التثبيت وتثبيته، سيظهر اختصار باسم Saudi Legal AI على سطح المكتب. يفتح البرنامج في نافذة مكتبية مستقلة، وليس في تبويب متصفح. لا يحتاج المستخدم النهائي إلى تثبيت Python أو كتابة أوامر.
+
+إنشاء ملف التثبيت (مرة واحدة على جهاز بناء Windows)
+1. استخدم جهاز Windows 10 أو Windows 11.
+2. ثبّت Python 3.11 أو أحدث، وفعّل Add Python to PATH أثناء التثبيت.
+3. ثبّت Inno Setup 6 من https://jrsoftware.org/isinfo.php
+4. فك ضغط الحزمة إلى مجلد محلي.
+5. انقر مرتين على build_windows.bat وانتظر انتهاء البناء.
+6. إذا نجح البناء، ستجد الملف:
+   dist-installer\SaudiLegalAI-Setup-Windows.exe
+
+تثبيت البرنامج على جهاز المستخدم
+1. انقل ملف SaudiLegalAI-Setup-Windows.exe إلى جهاز Windows المستهدف.
+2. انقر عليه مرتين واتبع خطوات التثبيت.
+3. اترك خيار إنشاء اختصار سطح المكتب محددًا.
+4. بعد التثبيت، افتح أيقونة Saudi Legal AI.
+5. ستظهر نافذة البرنامج المستقلة. أغلقها بالطريقة المعتادة عند الانتهاء.
+
+المتطلبات التقنية
+- عملية البناء تحتاج Windows وPython وInno Setup 6 واتصالًا بالإنترنت لتنزيل المكتبات.
+- التشغيل اليومي بعد تثبيت الحزمة لا يتطلب Python أو سطر أوامر.
+- يستخدم التطبيق WebView2 (محرك عرض Edge المضمّن في Windows). إذا لم يكن WebView2 Runtime موجودًا على الجهاز، ثبّته من صفحة Microsoft الرسمية:
+  https://developer.microsoft.com/microsoft-edge/webview2/
+- تعمل الخدمة على الجهاز محليًا عبر 127.0.0.1 ولا يُفترض أن تكون متاحة على الشبكة.
+
+حفظ البيانات
+تُحفظ قاعدة SQLite محليًا في:
+%LOCALAPPDATA%\SaudiLegalAI
+انسخ هذا المجلد بعد إغلاق التطبيق لعمل نسخة احتياطية، واحفظ النسخ في مكان آمن.
+
+حدود النسخة القانونية والأمنية
+- الحزمة الأصلية لا تتضمن قاعدة تشريعات سعودية كاملة ولا مزامنة تلقائية مع الجهات الرسمية.
+- البحث محصور بالمواد التي تم إدخالها محليًا.
+- لا يوجد حاليًا تسجيل دخول أو صلاحيات متعددة المستخدمين أو تشفير لقاعدة البيانات.
+- لا تضع بيانات عملاء أو مستندات سرية في النسخة الحالية.
+- راجع النصوص النظامية من مصادرها الرسمية، وتحقق من تاريخ النفاذ والتعديلات، واجعل المخرجات خاضعة لمراجعة مختص.
+- ملف Setup النهائي لم يتم إنتاجه أو اختباره على Windows في بيئة هذه المحادثة؛ ملف البناء مهيأ لذلك، ويلزم تنفيذ build_windows.bat على Windows للتحقق من نجاحه.
+</main></html>
